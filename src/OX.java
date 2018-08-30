@@ -76,7 +76,7 @@ public class OX {
     }
 
     public boolean checkWin(int col, int row) {
-        /* checkColWin */
+
         boolean colWin=true;
         for(int i = 0; i < 3; i++) {
             if(!table[i+1][col+1].equals(currentPlayer)) {
@@ -86,7 +86,7 @@ public class OX {
         if(colWin) {
             return true;
         }
-        /* checkRowWin */
+
         boolean rowWin=true;
         for(int i = 0; i < 3; i++) {
             if(!table[row+1][i+1].equals(currentPlayer)) {
@@ -97,7 +97,7 @@ public class OX {
             return true;
         }
 
-        /* checkEsWin */
+        
         boolean esWin = true;
         for(int i = 0; i < 3; i++) {
             if(!table[i+1][i+1].equals(currentPlayer)) {
@@ -109,12 +109,10 @@ public class OX {
         }
 
 
-        /* checkEsWin */
+
         boolean ssWin = true;
         for(int i = 0; i < 3; i++) {
-            /* col,row -> 2,0, 1,1, 0,2 */
-            /* row,col -> 1,3, 2,2, 3,1 */
-            /* row,col -> i:0 ,i+1,3-i, i:1 2,2, 3,1 */
+
             if(!table[i+1][3-i].equals(currentPlayer)) {
                 ssWin=false;
             }
